@@ -1,0 +1,48 @@
+<div class="wrap">
+    <img [src]="imageurl" style="width: 60px;height:60px; margin-left: 1%; margin-bottom: 2%;" >
+
+    
+<form [formGroup]="forms" (ngSubmit)="login()"> 
+    <div *ngIf="message" class="alert alert-danger">No password and Username Found</div>
+    <div class="form-group">
+        <label for="username" style="color: antiquewhite;">Username</label>
+        
+        <input 
+            id="username" 
+            type="text" 
+            class="form-control"
+            formControlName="username"
+            placeholder="Username"
+            >
+            <!--<div *ngIf="forms.get('username').touched && forms.get('username').invalid">invalid</div>-->
+            <div *ngIf="username.touched && username.invalid">
+            <div *ngIf="username.errors.required" style="color: red;">Username required</div>
+            <div *ngIf="username.errors.minlength" style="color: red;">Username should be three characters</div>
+            </div>
+            
+
+    </div>
+    <div class="form-group">
+        <label for="password" style="color: antiquewhite;">Password</label>
+        <input 
+            id="password" 
+            type="password" 
+            class="form-control"
+            formControlName="password"
+            placeholder="password">
+            <div *ngIf="password.touched && password.invalid">
+                <div *ngIf="password.errors.required"  style="color: red;">Password required</div>
+                </div>
+    </div>
+
+    <button class="btn btn-primary btn-block" [disabled]="forms.invalid" type="submit">Sign Up</button>
+    <p><a href="#">Forgot password</a></p>
+    
+    <p><a class="btn btn-link"  (click)="Open()">Sign Up</a></p>
+
+
+    
+</form>
+</div>
+<simple-notifications></simple-notifications>
+

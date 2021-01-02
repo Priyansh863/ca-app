@@ -1,0 +1,28 @@
+/* You can add global styles to this file, and also import other style files */
+.confirm-dialog-container #close-icon{
+    margin-left: auto;
+    order: 2;
+    font-weight:bolder ;
+}
+.confirm-dialog-container #close-icon:hover{
+    cursor: pointer;
+}
+
+confirm-dialog-container .content-container{
+    margin: 5px 5px 15px 5px;
+    color: aqua;
+    display: flex;
+}
+
+.confirm-dialog-container #yes-icon{
+    height: 50px;
+    width: 50%;
+    background-color: blueviolet;
+    color: wheat;
+    border-radius: 0px;
+}
+confirm-dialog-container span.content-span{
+    padding: 35px 16px;
+    text-align: center;
+    font-size: 20px;
+}

@@ -1,0 +1,115 @@
+
+
+
+<mat-tab-group class="pt-5" style="margin-left: 29%;margin-right: 29%;">
+    <mat-tab label="Friend List"> 
+        <p class="text-center">Friend List</p>
+  
+<div *ngFor="let i of data_friend">
+    <div class="container pt-5"> 
+        <mat-card>
+            
+        <div class="row">
+            <div class="col-lg-2">
+                
+                <div *ngIf="i.From_User.img==null">
+                    <img mat-card-image [src]="imageurl" style="border-radius: 50%; width: 100%; height: 100%; margin-left: 10%;" alt="Photo of a Shiba Inu">
+    
+    
+                </div>
+                <div *ngIf="i.From_User.img!=null">
+                    <img mat-card-image src="{{url+i.From_User.img}}" style="border-radius: 50%; width: 100%; height: 100%; margin-left: 10%;" alt="Photo of a Shiba Inu">
+    
+    
+                </div>
+    
+            </div>
+            <div class="col-lg-4">
+                <h5>{{i.From_User.name}}</h5>
+                <p>1 mutual friends</p>
+            </div>
+
+
+
+            <div class="col-lg-3">
+                <button class="btn btn-primary"(click)="onunfriend(i.id,i.From_User.name)">Unfriend</button>
+            </div>
+            <div class="col-lg-3">
+                <button class="btn btn-light" style="color: black;">Block</button>
+            </div>
+
+
+
+
+        </div>
+    </mat-card>
+    </div>
+    
+</div>
+<p class="text-center" style="color: red;">Copyright e-meet</p>
+
+ </mat-tab>
+
+
+<mat-tab label="Friend Request"> 
+    <p class="text-center">friend request</p>
+    
+    
+
+
+    <div *ngFor="let i of request_data">
+        <div class="container pt-5">
+            <mat-card>          <div class="row">
+                <div class="col-lg-5">
+                    <div *ngIf="i.From_User.img==null">
+                        <img mat-card-image [src]="imageurl" style="border-radius: 70%; width: 40%; margin-left: 2%;" alt="Photo of a Shiba Inu">
+        
+        
+                    </div>
+                    <div *ngIf="i.From_User.img!=null">
+                        <img mat-card-image src="{{url+i.From_User.img}}" style="border-radius: 70%; width: 40%; margin-left: 2%;" alt="Photo of a Shiba Inu">
+        
+        
+                    </div>
+                    
+        
+        
+                </div>
+                <div class="col-lg-7">
+        
+        
+                </div>
+        
+            </div>
+            <h1 class="text-center btn btn-link">{{i.From_User.name}}</h1>
+        
+            <div class="">
+                <button type="button" *ngIf="p_id!=i.id" class="btn btn-primary" style="padding: 1%;" (click)="onaccept(i.id)">Accept Request</button>
+                <button type="button" *ngIf="p_id==i.id" class="btn btn-success" style="padding: 1%;" (click)="onaccept(i.id)">Accepted Request</button>
+                <button type="button" class="btn btn-light" style="margin-left:20% ; padding: 1%;">Delete Request</button>
+            
+            </div>
+
+            
+        </mat-card>
+  
+            
+        </div>
+        <br>
+        </div>
+        
+        <hr>
+        
+
+
+        <p class="text-center" style="color: red;">Copyright e-meet</p>
+
+
+
+
+</mat-tab>
+<mat-tab label="Send Request"> 
+    <p class="text-center" style="color: red;">Copyright e-meet</p>
+    
+</mat-tab>
+</mat-tab-group>

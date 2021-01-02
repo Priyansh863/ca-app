@@ -1,0 +1,23 @@
+<h1 class="text-center">Galary</h1>
+<hr>
+<div *ngFor="let i of image_data">
+    <div *ngIf="i.content.Image!=null" >
+<div class="gallery" style="margin-left: 4%;margin-right: 4%;">
+    
+   <p style="color: blue;" class="text-center">{{i.content.Post_Title}}</p>
+
+
+        <img  src="{{url+i.content.Image}}" style="height:250px;">
+          
+    
+    
+    <div class="desc" style="width: 200px">Posted Date: {{i.content.CreatedDate}}
+    
+    
+    
+    
+    </div>
+</div>
+
+  </div>
+</div>

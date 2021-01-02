@@ -1,0 +1,152 @@
+
+
+<div class="container pt-5 example-card animate__animated animate__backInUp">
+    <div class="row">
+        <img mat-card-image [src]="imageurl" style="border-radius: 50%; width: 20%; height: 20%; column-span: 3;" alt="Photo of a Shiba Inu">
+        <span>
+            <h3 style="color: blue;padding-left: 10%; ">{{name}}</h3>
+        
+                <h3 style="padding-left: 10%; color: brown;">{{email}}</h3>
+</span>
+    </div>
+        <div class="row">
+            <div class="col-lg-3">
+                <form>
+                
+                <label for="files" class="btn btn-primary" style="margin-top: 10%; margin-left: 10%; width: 150px;">Select Image</label>
+                <input id="files"  type="file" style="visibility: hidden;" (change)="fileinput($event.target.files)">
+                
+                
+            </form>
+
+            </div>
+            <div class="col-lg-3">
+                <h4 >Post:9</h4>
+            </div>
+            <div class="col-lg-3">
+                <h4 style="margin-left: 20%;" >Followers:9</h4>
+            </div>
+            <div class="col-lg-3">
+                <h4 style="margin-left: 50%;">Following:10</h4>
+            </div>
+        </div>
+
+       
+</div>
+
+<nav mat-tab-nav-bar class="pt-4">
+    
+
+  <!--
+    <a mat-tab-link
+       *ngFor="let link of navLinks"
+       [routerLink]="link.path"
+       routerLinkActive #rla="routerLinkActive"
+       [active]="rla.isActive"
+       style="color: wheat;">
+       <i class="fa fa-home fa-3x">
+
+
+        <i class="fa fa-user-o fa-3x" aria-hidden="true"></i>
+       
+
+
+      
+    </a>
+    
+
+<a mat-tab-link [routerLink]="['/user']" routerLinkActive #rla="routerLinkActive"
+     [active]="rla.isActive">
+Timeline
+
+
+
+</a>
+
+<a mat-tab-link [routerLink]="['/user/request']" routerLinkActive #rla1="routerLinkActive"
+[active]="rla1.isActive"
+>friends
+
+
+</a>
+<a mat-tab-link [routerLink]="['/user/request']" routerLinkActive #rla1="routerLinkActive"
+[active]="rla1.isActive"
+>friends
+
+
+</a>
+<a mat-tab-link [routerLink]="['/user/request']" routerLinkActive #rla1="routerLinkActive"
+[active]="rla1.isActive"
+>friends
+
+
+</a>
+
+
+
+
+
+
+
+
+
+
+-->
+
+<a mat-tab-link [routerLink]="['/user']" routerLinkActive #rla="routerLinkActive"
+
+>
+Timeline
+
+
+
+</a>
+
+<a mat-tab-link [routerLink]="['/user/request']" routerLinkActive #rla1="routerLinkActive"
+
+>
+Friends
+
+
+</a>
+
+<a mat-tab-link [routerLink]="['/user/galary']" routerLinkActive #rla3="routerLinkActive"
+
+>
+Galary
+
+
+
+</a>
+
+<a  mat-tab-link routerLinkActive #rla2="routerLinkActive"
+[routerLink]="['/user/info']">
+About
+
+
+</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+  
+  </nav>
+  
+  <router-outlet></router-outlet>
+
+
+  

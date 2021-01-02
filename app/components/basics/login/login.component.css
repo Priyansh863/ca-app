@@ -1,0 +1,62 @@
+body{
+    background-color: blue;
+    margin: 0;
+    padding: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+.wrap{
+    
+    
+  
+    background: black;
+    border: 1px solid #2d416d;
+    box-shadow: 0 1px #5670a4 inset, 0 0 10px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    width: 360px ;
+    height: 480px;
+    margin: 40px auto;
+    padding: 10px 40px 0 30px;
+    text-align: center;
+}
+h1{
+    margin: 0 0 50px 0;
+    padding: 0;
+    font-size: 30px;
+    color:white;
+}
+input[type=text],input[type=password]{
+    width: 100%;
+    border: 1px solid #314d89;
+    outline: none;
+    padding: 10px 15px;
+    font-weight: 400;
+    margin: 5px;
+    border-radius: 5px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+button{
+    width: 100%;
+    color: black;
+    margin-top: 40px;
+    cursor:pointer;
+
+}
+button:hover{
+    background: #cc6699;
+    color: #fff;
+}
+
+p{
+    margin-top: 13px;
+}
+p a{
+    font-size: 15px;
+    color:white;
+    text-decoration: none;
+    font-weight: 400;
+}
+p a{
+    text-decoration: underline;
+}

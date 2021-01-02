@@ -1,0 +1,141 @@
+<div class="container">
+  
+
+    <h1 style="color: coral; margin-left:40%;margin-right:40% ;">SignUp</h1>
+    <button mat-button style="margin-left: 87%; margin-top:4% ; background-color: transparent;" (click)="onclose()">close
+        
+      <i class="fa fa-close fa-1x" style="color: red;"></i>
+      
+      
+      </button>
+
+  
+<form [formGroup]="forms" class="normal-form" (ngSubmit)="login()">
+  <mat-grid-list cols="2" rowHeight="400px">
+    <mat-grid-tile>
+      <div class="controles-container">
+        <mat-form-field>
+          <input formControlName="first_name" matInput placeholder="First Name*">
+          
+        </mat-form-field>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+        
+        <mat-form-field>
+          <input formControlName="email" matInput placeholder="email*">
+          <mat-error>This field is mandatory.</mat-error>
+
+          <div *ngIf="message_email">
+            <mat-error> email must be unique .</mat-error>
+
+          </div>
+
+        </mat-form-field>
+        <mat-form-field>
+          <input formControlName="username" matInput placeholder="username">
+          <mat-error>This field is mandatory.</mat-error>
+          <div *ngIf="message_username">
+            <mat-error>Username must unique</mat-error>
+
+
+          </div>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input formControlName="password" matInput placeholder="Password*" type="password">
+        </mat-form-field>
+        <mat-form-field>
+          <input formControlName="confirm_password" matInput placeholder="confirm_password*" type="password">
+          <mat-error>This field is mandatory.</mat-error>
+          <div *ngIf="message_password">
+            <mat-error>Password Not Matched.</mat-error>
+
+          </div>
+</mat-form-field>
+
+
+
+<mat-form-field>
+  <input matInput formControlName="Birthday" [matDatepicker]="my"  placeholder="Birthday">
+  <mat-datepicker-toggle [for]="my" matSuffix></mat-datepicker-toggle>
+  <mat-datepicker #my></mat-datepicker>
+</mat-form-field>
+
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <div class="controles-container">
+        <div class="add-bottom-padding">
+
+
+          <mat-form-field>
+            <mat-select formControlName="Technical_Field" placeholder="Technical Field">
+              <mat-option>None</mat-option>
+              <ng-container *ngFor="let department of technical_data">
+                <mat-option value="{{department.id}}">{{department.TechnicalName}}</mat-option>
+              </ng-container>
+            </mat-select>
+          </mat-form-field>
+
+          
+        </div>
+
+        <mat-form-field>
+          <mat-select formControlName="Non_Technical" placeholder="Non Technical Field">
+            <mat-option>None</mat-option>
+            <ng-container *ngFor="let department of non_technical_data">
+              <mat-option value="{{department.id}}">{{department.NonTechnicalName}}</mat-option>
+            </ng-container>
+          </mat-select>
+        </mat-form-field>
+
+
+        <mat-form-field>
+          <mat-select formControlName="city" placeholder="city">
+            <mat-option>None</mat-option>
+            <ng-container *ngFor="let department of city_data">
+              <mat-option value="{{department.id}}">{{department.CityName}}</mat-option>
+            </ng-container>
+          </mat-select>
+        </mat-form-field>
+
+
+        <mat-form-field>
+          <input formControlName="Institute" matInput placeholder="Institute Name">
+          <mat-error>This field is mandatory.</mat-error>
+          
+</mat-form-field>
+
+        <!--
+
+<mat-form-field>
+          <mat-select formControlName="Institute" placeholder="Institute">
+            <mat-option>None</mat-option>
+            <ng-container *ngFor="let department of institutedata">
+              <mat-option value="{{department.username.username}}">{{department.username.username}}</mat-option>
+            </ng-container>
+          </mat-select>
+        </mat-form-field>
+        -->
+        
+        <div class="button-row pt-3" >
+          <button mat-raised-button style="background-color: wheat;" type="submit" [disabled]="forms.invalid" >Submit</button>
+          <button mat-raised-button color="warn" (click)="onClear()" style="margin-left:20%;">Clear</button>
+        </div>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+</form>
+</div>

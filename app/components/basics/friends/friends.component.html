@@ -1,0 +1,53 @@
+ 
+<div class="sidenav" style="background-color: whitesmoke;">
+    <h1>Friends</h1>
+   <a routerLink="/friends/" class="pt-3" style="font-size: 20px;color: black;">Friend List</a>
+    <a routerLink="/friends/request" class=" pt-3 " style="font-size: 20px; color:chocolate;">Friend request</a>
+    <a routerLink="/friends/send-request" class=" pt-3 " style="font-size: 20px;">Send request</a>
+    <hr>
+    
+    <router-outlet></router-outlet>
+  
+  </div>
+  
+  
+  
+  <div >
+    <h1 class="text-center" style="margin-left: 15%;">Recommendend Friends</h1>
+    
+    <div *ngFor="let i of request_data">
+    <div class="container j"  style="margin-left: 40%; margin-top: 5%;" >
+           <div class="row">
+          <div class="col-lg-3">
+              <div *ngIf="i.image==0">
+                  <img mat-card-image [src]="imageurl" style="border-radius: 50%; width: 40%; margin-left: 3%;" alt="Photo of a Shiba Inu">
+  
+  
+              </div>
+              <div *ngIf="i.image!=0">
+                  <img mat-card-image src="{{url+i.image}}" style="border-radius: 50%; width: 40%; margin-left: 3%;" alt="Photo of a Shiba Inu">
+  
+  
+              </div>
+              
+  
+  
+          </div>
+      </div>
+      <a style="margin-top: 1%;" [routerLink]="['/user/',i.id]" class=" text-center btn btn-link">{{i.name}}</a>
+  
+      <div style="margin-top: 1%;">
+  
+          <button type="button" *ngIf="p_id==i.id" class="btn btn-success"  (click)="onaccept(i.id)">Accepted request</button>
+          <button type="button" *ngIf="p_id!=i.id" class="btn btn-primary"  (click)="onaccept(i.id)">Accept Request</button>
+          <button type="button" class="btn btn-light" style="margin-left:10% ; padding: 1%;" (click)="ondelete(i.id)">Delete Request</button>
+      
+      </div>
+      
+      
+      
+  </div>
+  </div>
+    
+  </div>
+  

@@ -1,0 +1,128 @@
+
+  <div *ngFor="let i of friend_list">
+<div class="container pt-5"> 
+
+
+    <div class="row" *ngIf="i.To_User.id==u_id;">
+        <div class="col-lg-4">
+            <div *ngIf="i.From_User.img==null">
+                <img mat-card-image [src]="imageurl" style="border-radius: 50%; width: 100%;" alt="Photo of a Shiba Inu">
+
+
+            </div>
+            <div *ngIf="i.From_User.img!=null">
+                <img mat-card-image src="{{url+i.From_User.img}}" style="border-radius: 50%; width: 100%;" alt="Photo of a Shiba Inu">
+
+
+            </div>
+
+        </div>
+        <div class="col-lg-6">
+            <a style="margin-top: 3%;" [routerLink]="['/user/',i.From_User.id]" class=" text-center btn btn-link">{{i.From_User.name}}</a>            
+            <p style="padding-left: 6%;"> 1 mutual friend</p>
+        </div>
+    </div>
+
+
+
+
+
+
+    <div class="row" *ngIf="i.To_User.id!=u_id;else login">
+        <div class="col-lg-4">
+            <div *ngIf="i.To_User.img==null">
+                <img mat-card-image [src]="imageurl" style="border-radius: 50%; width: 100%;" alt="Photo of a Shiba Inu">
+
+
+            </div>
+            <div *ngIf="i.To_User.img!=null">
+                <img mat-card-image src="{{url+i.To_User.img}}" style="border-radius: 50%; width: 100%;" alt="Photo of a Shiba Inu">
+
+
+            </div>
+
+        </div>
+        <div class="col-lg-6">
+            <a style="margin-top: 3%;" [routerLink]="['/user/',i.To_User.id]" class=" text-center btn btn-link">{{i.To_User.name}}</a>            
+            <p style="padding-left: 6%;"> 1 mutual friend</p>
+        </div>
+    </div>
+
+
+
+
+
+
+</div>
+</div>
+<br>
+    <p class="text-center" style="color: red;">Copyright e-meet</p>
+
+<!--
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3">
+            <img mat-card-image [src]="imageurl" style="border-radius: 70%; width: 100%;" alt="Photo of a Shiba Inu">
+
+        </div>
+        <div class="col-lg-6">
+            <h6>Priyansh Jhalani</h6>
+            <p>1 mutual friends</p>
+        </div>
+    </div>
+</div>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3">
+            <img mat-card-image [src]="imageurl" style="border-radius: 70%; width: 100%;" alt="Photo of a Shiba Inu">
+
+        </div>
+        <div class="col-lg-6">
+            <h6>Priyansh Jhalani</h6>
+            <p>1 mutual friends</p>
+        </div>
+    </div>
+</div>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3">
+            <img mat-card-image [src]="imageurl" style="border-radius: 70%; width: 100%;" alt="Photo of a Shiba Inu">
+
+        </div>
+        <div class="col-lg-6">
+            <h6>Priyansh Jhalani</h6>
+            <p>1 mutual friends</p>
+        </div>
+    </div>
+</div>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3">
+            <img mat-card-image [src]="imageurl" style="border-radius: 70%; width: 100%;" alt="Photo of a Shiba Inu">
+
+        </div>
+        <div class="col-lg-6">
+            <h6>Priyansh Jhalani</h6>
+            <p>1 mutual friends</p>
+        </div>
+    </div>
+</div>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3">
+            <img mat-card-image [src]="imageurl" style="border-radius: 70%; width: 100%;" alt="Photo of a Shiba Inu">
+
+        </div>
+        <div class="col-lg-6">
+            <h6>Priyansh Jhalani</h6>
+            <p>1 mutual friends</p>
+        </div>
+    </div>
+</div>
+<br>
+-->

@@ -1,0 +1,122 @@
+
+<div *ngIf="token" >
+ 
+  
+  <nav mat-tab-nav-bar style="background: black;" >
+    <img [src]="imageurl" style="width: 60px;height:60px; margin-left: 1%;">
+    <form class="form-inline" style="margin-left: 2%;" [formGroup]="forms" (ngSubmit)="open()" >
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"
+      formControlName="name"
+      
+      >
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit" >Search</button>
+    </form>
+    <div style="margin-left: 6%;">
+
+  <!--
+    <a mat-tab-link
+       *ngFor="let link of navLinks"
+       [routerLink]="link.path"
+       routerLinkActive #rla="routerLinkActive"
+       [active]="rla.isActive"
+       style="color: wheat;">
+       <i class="fa fa-home fa-3x">
+
+
+        <i class="fa fa-user-o fa-3x" aria-hidden="true"></i>
+       
+
+
+      
+    </a>
+    -->
+
+
+
+<a mat-tab-link [routerLink]="['/home']" routerLinkActive #rla="routerLinkActive"
+[active]="rla.isActive"
+style="color: wheat;">
+<i class="fa fa-home fa-2x"></i>
+
+
+
+</a>
+
+<a mat-tab-link [routerLink]="['/friends']" routerLinkActive #rla1="routerLinkActive"
+[active]="rla1.isActive"
+style="color: white;">
+<i class="fa fa-group fa-2x" style="color: wheat;"></i>
+
+
+</a>
+
+<a mat-tab-link [routerLink]="['/friends']" routerLinkActive #rla3="routerLinkActive"
+[active]="rla3.isActive"
+style="color: white;">
+<i class="fa fa-tags fa-2x" style="color: wheat;"></i>
+
+
+</a>
+
+<a  mat-tab-link routerLinkActive #rla2="routerLinkActive"
+[active]="rla2.isActive"
+style="color: wheat;"
+(click)="open1()"
+*ngIf="c==0"
+
+
+
+
+>
+<i class="fa fa-bell fa-2x" 
+></i>
+
+
+</a>
+
+<a  mat-tab-link routerLinkActive #rla2="routerLinkActive"
+[active]="rla2.isActive"
+
+style="color: wheat;"
+(click)="open1()"
+*ngIf="c!=0"
+
+
+
+
+>
+<i class="fa fa-bell fa-2x" matBadge="{{c}}"
+matBadgeColor="white"></i>
+
+
+</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+  </nav>
+  
+  <router-outlet></router-outlet>
+
+
+  
+</div>
+<simple-notifications></simple-notifications>
+<div *ngIf="!token">
+  <nav mat-tab-nav-bar style="background: black;">
+    <img [src]="imageurl" style="width: 60px;height:60px; margin-left: 1%;">
+
+  </nav>
+  <router-outlet></router-outlet>
+
+</div>

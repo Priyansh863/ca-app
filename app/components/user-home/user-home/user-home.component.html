@@ -1,0 +1,323 @@
+<div class="container pt-5 example-card animate__animated animate__backInUp">
+    <div class="row">
+        <img mat-card-image [src]="imageurl" style="border-radius: 60%; width: 20%; height: 20%; column-span: 3;" alt="Photo of a Shiba Inu">
+
+        <span>
+            <h3 style="color: blue;padding-left: 10%; ">{{name}}</h3>
+        
+                <h3 style="padding-left: 10%; color: brown;">{{email}}</h3>
+</span>
+    </div>
+        <div class="row">
+
+            <div class="col-lg-3">
+              <div *ngIf="oncheck()">
+                <button style="margin-top: 10%; margin-left: 10%; width: 150px;" type="button" (click)="Unfollow()" class="btn btn-primary">Unfollow</button>
+              </div>
+              <div *ngIf="oncheck()==0">
+                <button style="margin-top: 10%; margin-left: 10%; width: 150px;" type="button" (click)="follow()" class="btn btn-outline-primary">follow</button>
+              </div>
+              
+
+            </div>
+            <div class="col-lg-3">
+                <h4 >Post:9</h4>
+            </div>
+            <div class="col-lg-3">
+                <h4 style="margin-left: 20%;" >Followers:9</h4>
+            </div>
+            <div class="col-lg-3">
+                <h4 style="margin-left: 50%;">Following:10</h4>
+            </div>
+        </div>
+        
+
+<h1 class="text-center">Timeline</h1>
+<hr>
+
+</div>
+
+
+
+
+<div class="container" style="margin-left: 25%; margin-right: 25%;">
+  <div class="row" *ngFor="let i of post_data">
+
+    <mat-card class="example-card animate__animated animate__backInUp"
+      style="width: 60%; margin-top: 3%; margin-left: 5%;">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image">
+          <div *ngIf="i.user.img!=null">
+
+
+            <img src="{{url+i.user.img}}" style="width: 60px;height:60px; border-radius: 50%;">
+          </div>
+          <div *ngIf="i.user.img==null">
+
+
+            <img [src]="imageurls" style="width: 60px;height:60px; border-radius: 50%;">
+          </div>
+        </div>
+
+        <mat-card-title>
+          <a class="btn btn-link" [routerLink]="['/user/',i.user.id]">
+            {{i.user.name}}</a>
+        </mat-card-title>
+        <mat-card-subtitle style="padding-left: 15%; padding-top: 3%;">
+          <a class="btn btn-link" [routerLink]="['/tag/',i.content.Post_Title]">
+            #{{i.content.Post_Title}}</a>
+          
+          </mat-card-subtitle>
+              </mat-card-header>
+      <div *ngIf="i.content.Image!=null">
+
+
+        <img mat-card-image src="{{url+i.content.Image}}" class="pt-5" style="width: 60%; height: 50%; margin-left: 20%;margin-right: 20%;" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+          <p>
+            {{i.content.Text}}
+          </p>
+        </mat-card-content>
+
+      </div>
+      <div *ngIf="i.content.Image==null">
+        <mat-card-content class="pt-5">
+          <p>
+            {{i.content.Text}}
+          </p>
+        </mat-card-content>
+      </div>
+
+
+
+
+
+
+
+
+      <mat-card-actions>
+
+
+
+
+
+
+
+
+        <div class="container">
+
+          <div class="row">
+
+            <div class="col-lg-3">
+              <div *ngIf="hi(i.id)">
+
+              <button mat-button style="margin-bottom: 0%;"(click)="onlike_a(i.id)">
+
+                <i class="fa fa-heart fa-2x" style="color: red" aria-hidden="true"></i>
+              </button>
+
+
+              <p style="color: blue; margin-bottom: 6%; margin-left: 30%;">
+                {{i.LikeCount}}
+              </p>
+              </div>
+<div *ngIf="hi(i.id)==0">
+
+                <button mat-button style="margin-bottom: 0%;"(click)="onlike_a(i.id)">
+                  <i class="fa fa-heart-o fa-2x"  aria-hidden="true"></i>
+
+                </button>
+
+
+                <p style="color: blue; margin-bottom: 6%; margin-left: 30%;">
+                  {{i.LikeCount}}
+                </p>
+
+                
+
+              </div>
+
+
+
+
+            </div>
+
+            <div class="col-lg-3">
+              <div *ngIf="by(i.id)">
+
+              <button mat-button style="margin-bottom: 0%;" (click)="ondislike(i.id)">
+
+                <i class="fa fa-thumbs-down fa-2x" style="color: black;" aria-hidden="true"></i>
+              </button>
+
+
+              <p style="color: blue; margin-bottom: 6%; margin-left: 22%;">
+                {{i.UnLikeCount}}
+              </p>
+</div>
+
+
+
+<div *ngIf="by(i.id)==0">
+
+<button mat-button style="margin-bottom: 0%;" (click)="ondislike(i.id)">
+
+<i class="fa fa-thumbs-o-down fa-2x" aria-hidden="true"></i>
+</button>
+
+
+<p style="color: blue; margin-bottom: 6%; margin-left: 22%;">
+{{i.UnLikeCount}}
+</p>
+</div>
+
+
+
+
+            </div>
+            <div class="col-lg-3">
+              <button mat-button style="margin-bottom: 0%;">
+
+                <i class="fa fa-share-alt fa-2x" aria-hidden="true"></i>
+              </button>
+
+            </div>
+            <div class="col-lg-3">
+              
+              <button mat-button style="margin-bottom: 0%;" (click)="comments(i.id)">
+
+                <i class="fa fa-commenting fa-2x" aria-hidden="true"></i>
+              </button>
+            
+            
+
+
+
+
+
+            </div>
+            
+
+          </div>
+
+        </div>
+
+        <div class="comment" *ngIf="o==i.id">
+          <hr>
+          <h1 class="text-center">Comment</h1>
+          <div *ngFor="let k of comment">
+            <mat-card>
+              <mat-card-header>
+                <div mat-card-avatar class="example-header-image">
+                  <div *ngIf="k.user.img!=null">
+
+
+                    <img src="{{url+k.user.img}}" style="width: 60px;height:60px; border-radius: 50%;">
+                  </div>
+                  <div *ngIf="k.user.img==null">
+
+
+                    <img [src]="imageurls" style="width: 60px;height:60px; border-radius: 50%;">
+                  </div>
+                </div>
+
+                <mat-card-title>
+                  <a class="btn btn-link" [routerLink]="['/user/',k.user.id]">
+                    {{k.user.name}}</a>
+                </mat-card-title>
+              </mat-card-header>
+              <mat-card-content class="pt-5">
+                <p>
+                  {{k.Post_comment}}
+                </p>
+              </mat-card-content>
+
+            </mat-card>
+
+
+          </div>
+          <form class="pt-3" [formGroup]="forms" (ngSubmit)="add_comment(i.id)">
+            <img [src]="imageurls" style="width: 40px;height:40px; border-radius: 50%;">
+            
+
+            <input type="text" label="Add Comment" style=" border: black 50% solid; margin-left: 2%; padding: 2%;"
+            
+           
+        formControlName="Post_comment"
+        placeholder="Add Comment"
+        
+            
+            >
+            <button mat-raised-button color="primary" style="color: peru;" style="margin-left: 5; margin-top: 2%;">Add Comment</button>
+          
+
+
+          </form>
+          <hr>
+        </div>
+
+
+
+      </mat-card-actions>
+
+
+
+
+    </mat-card>
+
+  </div>
+
+</div>
+
+<hr>
+<div>
+
+  <h1 class="text-center" style="color: chocolate;">About section</h1>
+  <br>
+  <div style="margin-left: 15%;margin-right: 15%;">
+      <mat-card class="alert alert-secondary">
+          <h3>Name: {{name1}}</h3>
+          <hr>
+          <h3>Email: {{email1}}</h3>
+          <hr>
+          <h3>TechnicalField: {{technical}}</h3>
+          <hr>
+          <h3>NonTechnicalField: {{nontechnical}}</h3>
+          <hr>
+          <h3>Age: {{age}}</h3>
+          <hr>
+          <h3>City: {{city}}</h3>
+          <hr>
+          <h3>Institute: {{institute}}</h3>
+          <hr>
+          <h3>BirthDate: {{birth}}</h3>
+          <hr>
+
+          
+          
+
+          
+          
+          
+
+      </mat-card>
+  </div>
+
+
+ 
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+

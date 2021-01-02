@@ -1,0 +1,111 @@
+<div>
+    <h1 class="text-center" style="color: royalblue;">Search</h1>
+    <form class="form-inline" [formGroup]="forms" (ngSubmit)="open()">
+
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" 
+        value="{{name}}"
+        
+        formControlName="exit"
+        >
+        <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+        <button mat-button style="margin-left: 57%;" (click)="onclose()">close
+        
+        <i class="fa fa-close fa-1x" style="color: black;"></i>
+        
+        
+        </button>
+      </form>
+    <hr>
+    
+</div>
+<div *ngFor="let i of data_user">
+    
+<div class="container pt-4" class="pt-5">
+    <div class="row">
+        <div class="col-lg-5">
+            <div *ngIf="i.img==null">
+                <img mat-card-image [src]="imageurl" style="border-radius: 60%; width: 30%; margin-left: 3%;" alt="Photo of a Shiba Inu">
+
+            </div>
+            
+            
+            <div *ngIf="i.img!=null">
+                <img mat-card-image src="{{i.img}}" style="border-radius: 60%; width: 30%; margin-left: 3%;" alt="Photo of a Shiba Inu">
+
+
+            </div>
+            
+            
+
+
+        </div>
+        <div class="col-lg-7">
+
+
+        </div>
+
+    </div>
+    <a class="btn btn-link" [routerLink]="['/user/',i.id]" style="margin-left: 1%;">{{i.name}}</a>
+
+        <div *ngIf="oncheck(i.id);else login">
+        <button type="button" class="btn btn-primary"  style="padding: 1%; margin-left:0%">Delete request</button>
+        <button type="button" class="btn btn-light" style="margin-left:2% ; padding: 1%;">Block User</button>
+    </div>
+    
+    <ng-template #login>
+        <div>        
+            <button type="button" class="btn btn-primary" style="padding: 1%; margin-left:0%" (click)="onsend(i.id)">Send Request</button>
+        <button type="button" class="btn btn-light" style="margin-left:2% ; padding: 1%;">Block User</button>
+    </div>
+
+    </ng-template>
+    
+
+    
+    
+    
+</div>
+</div>
+<p class="text-center" style="color: red;">Copyright e-meet</p>
+
+<!--
+
+<div class="container pt-5">
+    <div class="row">
+        <div class="col-lg-5">
+            
+                <img mat-card-image [src]="imageurl" style="border-radius: 60%; width: 30%;" alt="Photo of a Shiba Inu">
+
+
+            
+            
+            <div *ngIf="0">
+                <img mat-card-image src="{{url+i.From_User.img}}" style="border-radius: 70%; width: 100%;" alt="Photo of a Shiba Inu">
+
+
+            </div>
+            
+            
+
+
+        </div>
+        <div class="col-lg-7">
+
+
+        </div>
+
+    </div>
+    <h1 class="text-center btn btn-link">Priyansh</h1>
+
+    <div class="">
+        <button type="button" class="btn btn-primary" style="padding: 1%;">Accept Request</button>
+        <button type="button" class="btn btn-light" style="margin-left:2% ; padding: 1%;">Delete Request</button>
+    
+    </div>
+    
+    
+    
+</div>
+<br>
+
+-->

@@ -1,0 +1,19 @@
+.controles-container{
+    width: 80%;
+    padding: 5%;
+
+}
+.controles-container > *{
+    width: 60%;
+   
+
+}
+
+.tp-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+ }
+ .tp-full-width {
+    width: 100%;
+ }

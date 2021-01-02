@@ -1,0 +1,36 @@
+<h1 class="text-center">Add Post</h1>
+<button (click)="onclose()" mat-button color="warn" style="margin-left: 90%;">Close
+
+
+  <i class="fa fa-close fa-1x" style="color: black;"></i>
+
+
+</button>
+<hr>
+
+<form [formGroup]="forms" class="normal-form" (ngSubmit)="login()">
+        <div class="controles-container" >
+          <mat-form-field>
+            <input type="text" matInput placeholder="title" formControlName="title">
+            <mat-error>This field is mandatory.</mat-error>
+           
+            </mat-form-field>
+
+                <mat-form-field class = "tp-full-width">
+                    <textarea matInput placeholder = "Enter your comment" formControlName="text"></textarea>
+                 </mat-form-field>
+                 <div *ngIf="messang">
+                    <img [src]="imageurl" #caption ngModel name="caption" style="width: 250px; height: 200px; margin: 2%; border: transparent solid 2px;">
+
+                </div>
+                    <input type="file"  #Image accept="image/" (change)=
+                    
+                    "fileinput($event.target.files)" formControlName="img">
+                    
+                    <button class="btn btn-primary" type="submit" [disabled]="forms.invalid" style="margin-top: 3%;" >Post</button>
+
+
+  
+            </div>
+</form>
+  

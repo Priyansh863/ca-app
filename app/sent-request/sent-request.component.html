@@ -1,0 +1,90 @@
+<div *ngFor="let i of request_data">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5">
+                <div *ngIf="i.To_User.img==null">
+                    <img mat-card-image [src]="imageurl" style="border-radius: 50%; width: 100%; margin-left: 3%;" alt="Photo of a Shiba Inu">
+    
+    
+                </div>
+                <div *ngIf="i.To_User.img!=null">
+                    <img mat-card-image src="{{url+i.To_User.img}}" style="border-radius: 50%; width: 100%; margin-left: 3%;" alt="Photo of a Shiba Inu">
+    
+    
+                </div>
+                
+    
+    
+            </div>
+        </div>
+        <a style="margin-top: 3%;" [routerLink]="['/user/',i.To_User.id]" class=" text-center btn btn-link">{{i.To_User.name}}</a>
+    
+        <div style="margin-top: 2%;">
+    
+            <button type="button"  class="btn btn-primary" (click)="oncancle(i.id)" style="padding: 2%;" >Cancle request</button>
+            <button type="button"  class="btn btn-light" style="padding: 2%; margin-left: 3%;" >Block</button>
+        
+        </div>
+        
+        
+        
+    </div>
+    <br>
+    </div>
+    <!--
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5">
+                
+                <img mat-card-image [src]="imageurl" style="border-radius: 70%; width: 100%;" alt="Photo of a Shiba Inu">
+    
+    
+            </div>
+            <div class="col-lg-7">
+    
+    
+            </div>
+    
+        </div>
+        <h1 class="text-center btn btn-link">Priyansh Jhalani</h1>
+    
+        <div class="">
+            <button type="button" class="btn btn-primary" style="padding: 3%;">Accept Request</button>
+            <button type="button" class="btn btn-light" style="margin-left:20% ; padding: 3%;">Delete Request</button>
+        
+        </div>
+        
+        
+        
+    </div>
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5">
+                
+                <img mat-card-image [src]="imageurl" style="border-radius: 70%; width: 100%;" alt="Photo of a Shiba Inu">
+    
+    
+            </div>
+            <div class="col-lg-7">
+    
+    
+            </div>
+    
+        </div>
+        <h1 class="text-center btn btn-link">Priyansh Jhalani</h1>
+    
+        <div class="">
+            <button type="button" class="btn btn-primary" style="padding: 3%;">Accept Request</button>
+            <button type="button" class="btn btn-light" style="margin-left:20% ; padding: 3%;">Delete Request</button>
+        
+        </div>
+        
+        
+        
+    </div>
+    <hr>
+    <br>
+    -->
+    <br>
+    <p class="text-center" style="color: red;">Copyright e-meet</p>

@@ -1,0 +1,177 @@
+<h1 class="text-center">Notification</h1>
+<button mat-button (click)="onclose()" style="margin-left: 90%;">Cancle
+<i class="fa fa-close fa-1x" style="color: red;"></i>
+</button>
+<hr>
+<div *ngFor="let i of notification_data">
+<div *ngIf="i.Like.LikeCount!=null">
+    <div class="container">
+        <div class="row alert alert-primary">
+            <div class="col">
+        <div *ngIf="i.Like.user.img!=null">
+<img src="{{url+i.Like.user.img}}" 
+style="width: 90px;height:90px; border-radius: 50%;">
+                    <div>
+                        <a class="btn btn-link">
+                            {{i.Like.user.name}}
+                        </a>
+                        <p>Like your post</p> 
+                    </div>
+                  </div>
+                  <div *ngIf="i.Like.user.img==null">
+
+
+                    <img [src]="imageurls" style="width: 90px;height:90px; border-radius: 50%;">
+                    <div >
+                        <a class="btn btn-link">
+                            {{i.Like.user.name}}
+                        </a>
+                        <p>Like your post </p>          
+                    </div>
+                  </div>
+                </div>
+                <div>
+                    <i class="fa fa-thumbs-o-up fa-2x" aria-hidden="true"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+<div *ngIf="i.UnLike.UnLikeCount!=null">
+    <div class="container" >
+        <div class="row alert alert-secondary">
+            <div class="col">
+                <div *ngIf="i.UnLike.user.img!=null">
+                    <img src="{{url+i.UnLike.user.img}}" style="width: 90px;height:90px; border-radius: 50%;">
+                    <div>
+                        <a class="btn btn-link">
+                            {{i.UnLike.user.name}}
+                        </a>
+                        <p>UnLike your post </p>                    
+                    </div>
+                  </div>
+                  <div *ngIf="i.UnLike.user.img==null">
+
+
+                    <img [src]="imageurls" style="width: 90px;height:90px; border-radius: 50%;">
+                    <div>
+                        <a class="btn btn-link">
+                            {{i.UnLike.user.name}}
+                        </a>
+                        <p>UnLike your post </p>
+                             </div>
+                  </div>
+                  
+                </div>
+                <div >
+                    <i class="fa fa-thumbs-o-down fa-2x" aria-hidden="true"></i>
+                </div>
+            </div>
+            
+        </div>
+
+</div>
+
+
+
+
+
+
+
+<div *ngIf="i.comment.User!=null">
+    <div class="container" >
+        <div class="row alert alert-secondary">
+            <div class="col">
+                <div *ngIf="i.comment.user.img!=null">
+                    <img src="{{url+i.comment.user.img}}" style="width: 90px;height:90px; border-radius: 50%;">
+                    <div>
+                        <a class="btn btn-link">
+                            {{i.comment.user.name}} 
+                        </a>
+                        <p>Comment: {{i.comment.Post_comment}}</p>
+                    </div>
+                  </div>
+                  <div *ngIf="i.comment.user.img==null">
+
+
+                    <img [src]="imageurls" style="width: 90px;height:90px; border-radius: 50%;">
+                    <div>
+                        <a class="btn btn-link">
+                            {{i.comment.user.name}}
+                        </a>
+                        <p >Comment: {{i.comment.Post_comment}}</p>
+                             </div>
+                  </div>
+                  
+                </div>
+                <div >
+                    <i class="fa fa-commenting fa-2x" aria-hidden="true"></i>
+
+                </div>
+            </div>
+            
+        </div>
+
+</div>
+
+
+
+
+        <div *ngIf="i.friend.FromUser!=null">
+            <div class="container">
+                <div class="row alert alert-secondary">
+                    <div class="col">
+                        <div *ngIf="i.friend.From_User.img!=null">
+                            <img src="{{url+i.friend.From_User.img}}" style="width: 90px;height:90px; border-radius: 50%;">
+                            <div>
+                                <a class="btn btn-link" style="margin-right: 2%;">{{i.friend.From_User.name}} 
+                                </a>
+                                <p>Send request</p>
+                                
+
+                                
+                            </div>
+                          </div>
+                          <div *ngIf="i.friend.From_User.img==null">
+        
+        
+                            <img [src]="imageurls" style="width: 90px;height:90px; border-radius: 50%;">
+                            <div>
+                                <a class="btn btn-link"
+                                style="margin-right: 2%;"
+                                >
+                                    {{i.friend.From_User.name}}
+                                </a>
+                                
+                                <p>Send request</p>
+
+
+                                     </div>
+                          </div>
+                          
+                        </div>
+                        <div >
+                            <i class="fa fa-user-o fa-2x"></i>
+        
+                        </div>
+                    </div>
+                    
+                </div>
+        
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+</div>
+<p style="color: red;" class="text-center">Copyright e-meet</p>
+
